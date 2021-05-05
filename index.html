@@ -18,14 +18,18 @@
            <h1>MyAlbum</h1>
         </header>
 
+
+
          <main>
+
+
              <div class="sx" @click="prevPhoto()">
             
                     <i class="fas fa-angle-left"></i>
             
               </div>
 
-         <div class="center">
+                 <div class="center">
 
 
                 <div class="image">
@@ -43,7 +47,7 @@
                         @click= "counter = index"
                         class="fas fa-circle"></i>
                        
-                    </div>
+                 </div>
 
              </div>
 
@@ -55,7 +59,14 @@
             
               </div>
           </main>
-
+          <div class="timer">
+              <h2>Clicca qui se vuoi far scorrere le immagini</h2>
+              
+              <button class="btn" @click="timerPhoto()">
+                  Clicca qui
+                </button>
+          </div>
+          
      </div> 
     <script src="assets/js/script.js"></script>
 </body>
