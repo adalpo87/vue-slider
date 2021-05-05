@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+   <div id="app">
+        <header>
+           <h1>MyAlbum</h1>
+        </header>
+
+         <main>
+             <div class="sx" @click="prevPhoto()">
+            
+                    <i class="fas fa-angle-left"></i>
+            
+              </div>
+
+         <div class="center">
+
+
+                <div class="image">
+
+                   <img :src="image[counter]" alt="">
+               
+                </div>
+
+
+
+                <div class="select-img">
+                    <i
+                        v-for="(photo, index) in image"       
+                        :class="(index === counter) ? 'active' : null" 
+                        @click= "counter = index"
+                        class="fas fa-circle"></i>
+                       
+                    </div>
+
+             </div>
+
+
+
+              <div class="dx" @click="nextPhoto()">
+            
+                  <i class="fas fa-angle-right"></i>
+            
+              </div>
+          </main>
+
+     </div> 
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
