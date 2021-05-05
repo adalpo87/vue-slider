@@ -13,61 +13,54 @@
 </head>
 <body>
 
-   <div id="app">
-        <header>
-           <h1>MyAlbum</h1>
-        </header>
+  <div id="app">
+    
+    <header>
+        <h1>MyAlbum</h1>
+    </header>
+    
+     <main>
+        <div class="album">
+            <img 
+            v-for="(photo, index) in image"
+            :class="(index === counter) ? 'active' : null"
+            :src="image[counter]"
+            @click="counter = index"
+            alt="">
+        </div>
 
-
-
-         <main>
-
-
-             <div class="sx" @click="prevPhoto()">
+       <div class="image">
             
-                    <i class="fas fa-angle-left"></i>
+
+        <div class="center">
+
+            <i class="fas fa-chevron-left prev"
+                @click="prevPhoto()"
+            ></i>
+
+            <img :src="image[counter]" alt="">
             
-              </div>
+            <i class="fas fa-chevron-right next"
+            @click="nextPhoto()"
+            ></i>
+       
+        </div>
 
-                 <div class="center">
+        
+       </div>  
 
+       <div class="image-rotation">
+         <h4>Clicca qui per far ruotare le immagini</h4>
+       
+         <button class="btn" @click="timerPhoto()">
+             Click Here
+            </button>
+        </div>
+     </main>
+    
 
-                <div class="image">
-
-                   <img :src="image[counter]" alt="">
-               
-                </div>
-
-
-
-                <div class="select-img">
-                    <i
-                        v-for="(photo, index) in image"       
-                        :class="(index === counter) ? 'active' : null" 
-                        @click= "counter = index"
-                        class="fas fa-circle"></i>
-                       
-                 </div>
-
-             </div>
-
-
-
-              <div class="dx" @click="nextPhoto()">
-            
-                  <i class="fas fa-angle-right"></i>
-            
-              </div>
-          </main>
-          <div class="timer">
-              <h2>Clicca qui se vuoi far scorrere le immagini</h2>
-              
-              <button class="btn" @click="timerPhoto()">
-                  Clicca qui
-                </button>
-          </div>
           
-     </div> 
+  </div> 
     <script src="assets/js/script.js"></script>
 </body>
 </html>
