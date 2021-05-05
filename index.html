@@ -24,7 +24,7 @@
             <img 
             v-for="(photo, index) in image"
             :class="(index === counter) ? 'active' : null"
-            :src="image[counter]"
+            :src="photo"
             @click="counter = index"
             alt="">
         </div>

@@ -39,6 +39,7 @@ main{
     width: 100px;
     border-radius: 10px;
     margin: 5px 20px;  
+    cursor: pointer;
 }
 
 .album > img.active{
